@@ -8,17 +8,19 @@
 <div class="container">
     <header class="blog-post-header">
         <h2 class="title mb-2">@Html.DisplayFor(model => model.PostTitle)</h2>
-        <div class="meta mb-3"><span class="comment"><a href="/kategori/@SeoHelper.ToSeoUrl(Model.Categories.CategoryName).ToLower()-@Model.CategoryId" style="color: dodgerblue"><b> Kategori: @Html.DisplayFor(model => model.Categories.CategoryName)</b></a></span><span class="comment"><a style="color: gray"><b>Tarih: @Html.DisplayFor(model => model.PostDateTime)</b> </a></span></div>
+        <div class="meta mb-3">
+            <span class="comment"><a href="/kategori/@SeoHelper.ToSeoUrl(Model.Categories.CategoryName).ToLower()-@Model.CategoryId" style="color: dodgerblue"><b> Kategori: @Html.DisplayFor(model => model.Categories.CategoryName)</b></a></span><span><a style="color: #18677F"><b>Tarih: @Model.PostDateTime.ToString("dd.MM.yyyy")</b> </a></span>
+        </div>
     </header>
-
+    <hr />
     <div class="blog-post-body">
-        <p>@Html.DisplayFor(model=>model.PostContent)</p>
+        <p>@Html.Raw(Model.PostContent)</p>
     </div>
 
     <div class="blog-comments-section">
         <div id="disqus_thread"></div>
         <script>
-            (function() {
+            (function () {
                 var d = document, s = d.createElement('script');
                 s.src = 'https://uygunwebadresi-blog.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());

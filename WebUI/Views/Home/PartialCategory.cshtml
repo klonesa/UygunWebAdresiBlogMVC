@@ -2,5 +2,7 @@
 @model IEnumerable<WebUI.Data.Entities.Categories>
 @foreach (var item in Model)
 {
-    <a class="dropdown-item" href="/kategori/@SeoHelper.ToSeoUrl(item.CategoryName).ToLower()-@item.CategoryId">@item.CategoryName</a>
+    <a class="dropdown-item" href="/kategori/@SeoHelper.ToSeoUrl(item.CategoryName).ToLower()-@item.CategoryId"><span class="badge">@item.CategoryName</span> 
+        <span class="badge badge-primary badge-pill">@item.Posts.Count</span>
+        </a>
 }

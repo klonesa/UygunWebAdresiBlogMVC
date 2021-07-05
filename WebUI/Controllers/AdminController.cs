@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using PagedList;
 using WebUI.Data.Entities;
 
 namespace WebUI.Controllers
@@ -17,9 +18,9 @@ namespace WebUI.Controllers
             return View();
         }
 
-        public ActionResult Blogs()
+        public ActionResult Blogs(int page=1)
         {
-            var result = _db.Posts.ToList().OrderByDescending(x => x.PostId);
+            var result = _db.Posts.ToList().OrderByDescending(x => x.PostId).ToPagedList(page,10);
             return View(result);
         }
 
@@ -32,6 +33,7 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddBlog(Posts entity, HttpPostedFileBase image)
         {
             if (image != null)
@@ -65,6 +67,7 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult UpdateBlog(Posts entity, HttpPostedFileBase image, int id)
         {
             if (ModelState.IsValid)
@@ -116,9 +119,9 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Categories()
+        public ActionResult Categories(int page=1)
         {
-            var result = _db.Categories.ToList().OrderByDescending(x => x.CategoryId);
+            var result = _db.Categories.ToList().OrderByDescending(x => x.CategoryId).ToPagedList(page,10);
             return View(result);
         }
 
@@ -179,9 +182,9 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Archives()
+        public ActionResult Archives(int page=1)
         {
-            var result = _db.Archives.ToList().OrderByDescending(x => x.ArchiveId);
+            var result = _db.Archives.ToList().OrderByDescending(x => x.ArchiveId).ToPagedList(page,10);
             return View(result);
         }
 

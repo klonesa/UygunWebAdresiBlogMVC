@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WebUI.Data.Entities.Categories>
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Categories";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -37,3 +39,9 @@
     </tbody>
 </table>
 
+<div class="container-fluid" align="center">
+
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+
+</div>

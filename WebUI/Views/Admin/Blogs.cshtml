@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WebUI.Data.Entities.Posts>
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Blogs";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -30,7 +32,7 @@
             <tr>
                 <th scope="row">@item.PostId</th>
                 <td>@item.PostTitle</td>
-                <td>@item.PostDateTime</td>
+                <td>@item.PostDateTime.ToString("dd.MM.yyyy")</td>
                 <td>
                     <a href="/admin/deleteblog/@item.PostId" class="badge badge-danger"><i class="fas fa-trash-alt"></i></a>
                     <a href="/admin/updateblog/@item.PostId" class="badge badge-success"><i class="fas fa-edit"></i></a>
@@ -39,3 +41,10 @@
         }
     </tbody>
 </table>
+
+<div class="container-fluid" align="center">
+
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+
+</div>

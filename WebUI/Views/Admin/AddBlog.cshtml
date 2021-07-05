@@ -3,41 +3,43 @@
     ViewBag.Title = "AddBlog";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script type="text/javascript">
+    CKEDITOR.replace('editor')
+</script>
 <h2>Blog Formunu Doldurunuz</h2>
 
 <div>
     @using (Html.BeginForm("AddBlog", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="form-group" align="right">
-            <a href="/admin/blogs/"><i class="fas fa-arrow-circle-left mr-2"></i>Geri Dön</a>
-        </div>
-        <div class="form-group mt-4">
-            <label>Başlık</label>
-            @Html.TextBoxFor(x => x.PostTitle, new { @maxlength = "500", @class = "form-control", required = "required" })
-        </div>
-        <div class="form-group mt-4">
-            <label>Kategori</label>
-            @Html.DropDownList("CategoryId", null, new { @class = "custom-select", required = "required" })
-        </div>
-        <div class="form-group mt-4">
-            <label>Arşiv</label>
-            @Html.DropDownList("ArchiveId", null, new { @class = "custom-select", required = "required" })
-        </div>
-        <div class="form-group mt-4">
-            <label>Tarih</label>
-            @Html.TextBoxFor(x => x.PostDateTime, new { @class = "form-control", required = "required", type = "date" })
-        </div>
-        <div class="form-group mt-4">
-            <label>İçerik</label>
-            @Html.TextAreaFor(x => x.PostContent, new { @class = "form-control", rows = "5", required = "required" })
-        </div>
-        <div class="form-group">            
-            <label>Resim</label>
-            <a><input type="file" class="form-control-file" name="image" placeholder="350x350 En Uygun Formattır" required="required" /></a>
-        </div>
-        <div class="form-group mt-4" align="right">
-            <button type="submit" class="btn btn-info animation-on-hover">İşlemi Tamamlamak İçin Tıklayınız</button>
-        </div>
-    }
+    <div class="form-group" align="right">
+        <a href="/admin/blogs/"><i class="fas fa-arrow-circle-left mr-2"></i>Geri Dön</a>
+    </div>
+    <div class="form-group mt-4">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.PostTitle, new { @maxlength = "500", @class = "form-control", required = "required" })
+    </div>
+    <div class="form-group mt-4">
+        <label>Kategori</label>
+        @Html.DropDownList("CategoryId", null, new { @class = "custom-select", required = "required" })
+    </div>
+    <div class="form-group mt-4">
+        <label>Arşiv</label>
+        @Html.DropDownList("ArchiveId", null, new { @class = "custom-select", required = "required" })
+    </div>
+    <div class="form-group mt-4">
+        <label>Tarih</label>
+        @Html.TextBoxFor(x => x.PostDateTime, new { @class = "form-control", required = "required", type = "date" })
+    </div>
+    <div class="form-group mt-4">
+        <label>İçerik</label>
+        @Html.TextAreaFor(x => x.PostContent, new { @class = "ckeditor", rows = "10", required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Resim</label>
+        <a><input type="file" class="form-control-file" name="image" placeholder="350x350 En Uygun Formattır" required="required" /></a>
+    </div>
+    <div class="form-group mt-4" align="right">
+        <button type="submit" class="btn btn-info animation-on-hover">İşlemi Tamamlamak İçin Tıklayınız</button>
+    </div>
+}
 </div>

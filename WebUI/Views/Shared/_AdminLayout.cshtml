@@ -1,7 +1,7 @@
-﻿@if (Session["id"] == null)
+﻿@*@if (Session["id"] == null)
 {
     Response.Redirect("/auth/login");
-}
+}*@
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -17,6 +17,8 @@
     <script defer src="/content/files/assets/fontawesome/js/all.min.js"></script>
     <link id="theme-style" rel="stylesheet" href="/content/files/assets/css/theme-3.css">
     <link href="~/content/pagedList.css" rel="stylesheet" />
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/styles.js"></script>
 </head>
 
 <body>

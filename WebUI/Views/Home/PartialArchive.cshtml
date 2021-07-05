@@ -2,6 +2,7 @@
 @model IEnumerable<WebUI.Data.Entities.Archives>
 @foreach (var item in Model)
 {
-    <a class="dropdown-item" href="/arsiv/@SeoHelper.ToSeoUrl(item.ArchiveName).ToLower()-@item.ArchiveId">@item.ArchiveName</a>
+    <a class="dropdown-item" href="/arsiv/@SeoHelper.ToSeoUrl(item.ArchiveName).ToLower()-@item.ArchiveId"><span class="badge">@item.ArchiveName</span> 
+        <span class="badge badge-primary badge-pill">@item.Posts.Count</span></a>
 }
 
