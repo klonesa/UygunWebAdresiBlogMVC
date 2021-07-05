@@ -9,6 +9,7 @@ namespace WebUI.Controllers
 {
     public class AuthController : Controller
     {
+        //Role inactive
         private UygunWebAdresiBlogEntities _db = new UygunWebAdresiBlogEntities();
         [HttpGet]
         public ActionResult Login()
