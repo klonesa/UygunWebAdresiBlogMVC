@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_SingleLayout.cshtml";
+}
+<h3>Giriş Kısmı</h3>
+<br />
+@using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+{@Html.AntiForgeryToken()
+<div class="form-group">
+    <label>Email Adresiniz</label>
+    <input type="email" class="form-control" name="UserEmail">
+</div>
+<div class="form-group">
+    <label>Şifreniz</label>
+    <input id="password-field" type="password" class="form-control" name="UserPassword">
+</div>
+<div class="form-group form-check">
+    <label>@ViewBag.FailedLogin</label>
+</div>
+<button type="submit" class="btn btn-primary">Giriş Yap</button>
+}
+
+

@@ -1,0 +1,32 @@
+﻿@using WebUI.Helpers
+@model WebUI.Data.Entities.Posts
+@{
+    ViewBag.Title = "ViewPost";
+    Layout = "~/Views/Shared/_SingleLayout.cshtml";
+}
+
+<div class="container">
+    <header class="blog-post-header">
+        <h2 class="title mb-2">@Html.DisplayFor(model => model.PostTitle)</h2>
+        <div class="meta mb-3"><span class="comment"><a href="/kategori/@SeoHelper.ToSeoUrl(Model.Categories.CategoryName).ToLower()-@Model.CategoryId" style="color: dodgerblue"><b> Kategori: @Html.DisplayFor(model => model.Categories.CategoryName)</b></a></span><span class="comment"><a style="color: gray"><b>Tarih: @Html.DisplayFor(model => model.PostDateTime)</b> </a></span></div>
+    </header>
+
+    <div class="blog-post-body">
+        <p>@Html.DisplayFor(model=>model.PostContent)</p>
+    </div>
+
+    <div class="blog-comments-section">
+        <div id="disqus_thread"></div>
+        <script>
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://uygunwebadresi-blog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+</div>
+

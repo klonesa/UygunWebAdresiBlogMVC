@@ -1,0 +1,26 @@
+﻿@model WebUI.Data.Entities.Archives
+@{
+    ViewBag.Title = "AddArchive";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Arşiv Formunu Doldurunuz</h2>
+
+<div>
+    @using (Html.BeginForm("AddArchive", "Admin", FormMethod.Post))
+    {
+        <div class="form-group" align="right">
+            <a href="/admin/archives/"><i class="fas fa-arrow-circle-left mr-2"></i>Geri Dön</a>
+        </div>
+        <div class="form-group mt-4">
+            <label>Arşiv Adı</label>
+            @Html.TextBoxFor(x => x.ArchiveName, new { @maxlength = "200", @class = "form-control", required = "required" })
+        </div>
+        <div class="form-group mt-4" align="right">
+            <button type="submit" class="btn btn-info animation-on-hover">İşlemi Tamamlamak İçin Tıklayınız</button>
+        </div>
+    }
+</div>
+
+

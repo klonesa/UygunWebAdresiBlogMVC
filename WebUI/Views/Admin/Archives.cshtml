@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebUI.Data.Entities.Archives>
+@{
+    ViewBag.Title = "Archives";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div align="left" class="mb-4">
+    <a href="/admin/"><i class="fas fa-arrow-circle-left mr-2"></i>Geri Dön</a>
+</div>
+
+<h2>Kategoriler Listesi </h2>
+
+<div align="right">
+    <a href="/admin/addarchive/" class="btn btn-primary mb-4">Arşiv Ekle</a>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Arşiv Adı</th>
+        <th scope="col">İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.ArchiveId</th>
+            <td>@item.ArchiveName</td>
+            <td>
+                <a href="/admin/deletearchive/@item.ArchiveId" class="badge badge-danger"><i class="fas fa-trash-alt"></i></a>
+                <a href="/admin/updatearchive/@item.ArchiveId" class="badge badge-success"><i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+

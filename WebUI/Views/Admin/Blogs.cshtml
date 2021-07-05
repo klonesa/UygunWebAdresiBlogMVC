@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebUI.Data.Entities.Posts>
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div align="left" class="mb-4">
+    <a href="/admin/"><i class="fas fa-arrow-circle-left mr-2"></i>Geri Dön</a>
+</div>
+
+<h2>Blog Paylaşımları Listesi </h2>
+
+<div align="right">
+    <a href="/admin/addblog/" class="btn btn-primary mb-4">Blog Yazısı Ekle</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Blog Başlığı</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.PostId</th>
+                <td>@item.PostTitle</td>
+                <td>@item.PostDateTime</td>
+                <td>
+                    <a href="/admin/deleteblog/@item.PostId" class="badge badge-danger"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/admin/updateblog/@item.PostId" class="badge badge-success"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
