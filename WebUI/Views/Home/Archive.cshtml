@@ -12,7 +12,7 @@
 {
     <div class="item mb-5">
         <div class="media">
-            <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="@item.PostPhoto" alt="image">
+            <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="@item.PostPhoto" style="height: 75px;width: 125px" alt="image">
             <div class="media-body">
                 <h3 class="title mb-1"><a href="/@SeoHelper.ToSeoUrl(item.PostTitle).ToLower()-@item.PostId">@item.PostTitle</a></h3>
                 <div class="meta mb-1"><span class="comment"><a style="color: dodgerblue" href="/kategori/@SeoHelper.ToSeoUrl(item.Categories.CategoryName).ToLower()-@item.CategoryId"><b>Kategori: @item.Categories.CategoryName</b></a></span><span><a style="color: #18677F"><b>Tarih: @item.PostDateTime.ToString("dd.MM.yyyy")</b></a></span></div>

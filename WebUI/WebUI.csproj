@@ -643,6 +643,7 @@
     <Content Include="Content\ckeditor\plugins\templates\templates\images\template1.gif" />
     <Content Include="Content\ckeditor\plugins\templates\templates\images\template2.gif" />
     <Content Include="Content\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Content\ckeditor\plugins\uploadimage\plugin.js" />
     <Content Include="Content\ckeditor\plugins\widget\images\handle.png" />
     <Content Include="Content\ckeditor\plugins\wsc\dialogs\ciframe.html" />
     <Content Include="Content\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
@@ -2867,6 +2868,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Img\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\Img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
