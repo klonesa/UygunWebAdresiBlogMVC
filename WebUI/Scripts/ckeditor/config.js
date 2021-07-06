@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.syntaxhighlight_lang = 'csharp';
     config.syntaxhighlight_hideControls = true;
-    config.languages = 'vi';
+    config.languages = 'tr';
     config.filebrowserBrowseUrl = '/Scripts/ckfinder/ckfinder.html';
     config.filebrowserImageBrowseUrl = '/Scripts/ckfinder/ckfinder.html?Types=Images';
     config.filebrowserFlashBrowseUrl = '/Scripts/ckfinder/ckfinder.html?Types=Flash';
