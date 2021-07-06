@@ -3,6 +3,8 @@
     ViewBag.Title = "AddBlog";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+<script src="~/Scripts/ckfinder/ckfinder.js"></script>
 
 <h2>Blog Formunu Doldurunuz</h2>
 
@@ -30,7 +32,7 @@
         </div>
         <div class="form-group mt-4">
             <label>İçerik</label>
-            @Html.TextAreaFor(x => x.PostContent, new { @class = "ckeditor", name="editor1", rows = "10", required = "required" })
+            @Html.TextAreaFor(x => x.PostContent, new { @class = "ckeditor", name = "editor1", rows = "5", required = "required" })
         </div>
         <div class="form-group">
             <label>Resim</label>
