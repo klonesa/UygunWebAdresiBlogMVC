@@ -7,6 +7,15 @@
     Layout = "~/Views/Shared/_SingleLayout.cshtml";
 }
 
+<div class="intro mb-4">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Kategoriye</strong> göre blog paylaşımları başarıyla listelenmiştir.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
 @foreach (var item in Model)
 {
     <div class="item mb-5">

@@ -140,6 +140,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Entities\Archives.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -1840,6 +1841,7 @@
     <Content Include="Content\Files\assets\fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="Content\Files\assets\fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="Content\Files\assets\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\Files\assets\images\404.png" />
     <Content Include="Content\Files\assets\images\about-me.jpg" />
     <Content Include="Content\Files\assets\images\blog\blog-post-banner.jpg" />
     <Content Include="Content\Files\assets\images\blog\blog-post-thumb-1.jpg" />
@@ -1854,6 +1856,7 @@
     <Content Include="Content\Files\assets\images\blog\blog-post-thumb-7.jpg" />
     <Content Include="Content\Files\assets\images\blog\blog-post-thumb-8.jpg" />
     <Content Include="Content\Files\assets\images\blog\blog-post-thumb-9.jpg" />
+    <Content Include="Content\Files\assets\images\error.png" />
     <Content Include="Content\Files\assets\images\hamburger.svg" />
     <Content Include="Content\Files\assets\images\profile.png" />
     <Content Include="Content\Files\assets\images\promo-banner.jpg" />
@@ -3431,6 +3434,7 @@
     <Content Include="Views\Home\PartialArchive.cshtml" />
     <Content Include="Views\Home\Archive.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
